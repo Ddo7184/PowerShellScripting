@@ -154,6 +154,7 @@ while (-not $RoleValid) {
             Disable-LocalUser
 
             Write-Host "`nAccounts disabled. If certain accounts need to be used, re-enable them manually." -ForegroundColor White
+            Write-Host "`nAccounts hardening finished. Please use the Hotwork Account for all operations" -ForegroundColor White
 
             Get-LocalUser | Where-Object Enabled | Select-Object Name,Enabled
         }
@@ -163,6 +164,7 @@ while (-not $RoleValid) {
         }
     }
 }
+
 
 
 
