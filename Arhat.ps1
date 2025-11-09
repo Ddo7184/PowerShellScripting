@@ -77,7 +77,7 @@ while (-not $RoleValid) {
 
                     "AD-DNS" {
                         Write-Host "`nCreating HotWork account for Active Directory Server..." -ForegroundColor White
-                        net user HotWork "M3tr0-AD-DN$-000" /add /passwordreq:yes
+                        net user HotWork "M3tr0-AD-DN$" /add /passwordreq:yes
                         Write-Host "`nHotWork account created." -ForegroundColor White
 
                         Write-Host "`nAdding HotWork account to Domain Admins group..." -ForegroundColor White
@@ -90,7 +90,7 @@ while (-not $RoleValid) {
 
                     "WEB-SRV" {
                         Write-Host "`nCreating HotWork account for Web Server..." -ForegroundColor White
-                        net user HotWork "M3tr0-W3b-SRV-001" /add /passwordreq:yes
+                        net user HotWork "M3tr0-W3b" /add /passwordreq:yes
                         Write-Host "`nHotWork account created." -ForegroundColor White
 
                         Write-Host "`nAdding HotWork account to Administrators group..." -ForegroundColor White
@@ -103,7 +103,7 @@ while (-not $RoleValid) {
 
                     "FTP-SRV" {
                         Write-Host "`nCreating HotWork account for FTP Server..." -ForegroundColor White
-                        net user HotWork "M3tr0-4TP-SRV-002" /add /passwordreq:yes
+                        net user HotWork "M3tr0-4TP" /add /passwordreq:yes
                         Write-Host "`nHotWork account created." -ForegroundColor White
 
                         Write-Host "`nAdding HotWork account to Administrators group..." -ForegroundColor White
@@ -116,7 +116,7 @@ while (-not $RoleValid) {
 
                     "FW-GUI" {
                         Write-Host "`nCreating HotWork account for Firewall Workstation..." -ForegroundColor White
-                        net user HotWork "M3tr0-W@llFire-GUI" /add /passwordreq:yes
+                        net user HotWork "M3tr0-F-W@ll" /add /passwordreq:yes
                         Write-Host "`nHotWork account created." -ForegroundColor White
 
                         Write-Host "`nAdding HotWork account to Administrators group..." -ForegroundColor White
@@ -162,3 +162,4 @@ while (-not $RoleValid) {
         }
     }
 }
+
