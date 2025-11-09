@@ -13,10 +13,10 @@
 #
 # HotWork Passwords (Feel free to change these when necessary or at your leisure)
 #
-# AD/DNS: M3tr0-AD-DN$-000
-# Web: M3tr0-W3b-SRV-001
-# FTP: M3tr0-4TP-SRV-002
-# Workstation: M3tr0-W@llFire-GUI
+# AD/DNS: M3tr0-AD-DN$
+# Web: M3tr0-W3b
+# FTP: M3tr0-4TP
+# Workstation: M3tr0-F-W@ll
 #
 #
 #
@@ -144,14 +144,16 @@ while (-not $RoleValid) {
             net user DefaultHotWork /active:no
             Write-Host "Administrator Account Disabled." -ForegroundColor Green
 
-            Write-Host "`nDisabling Guest Account and othe Accounts that may be suspicious..." -ForegroundColor White
+            WriteHost "`nDisabling Guest Account and othe Accounts that may be suspicious..." -ForegroundColor White
             $Keep = "Administrator","HotWork"
 
             Get-LocalUser | 
             Where-Object { $Keep -notcontains $_.Name } | 
             Disable-LocalUser
 
-            Write-Host "`nAccounts disabled. If certain accounts need to be used, re-enable them manually." -ForegroundColor White
+            WriteHost "`nAccounts disabled. If certain accounts need to be used, re-enable them manually." -ForegroundColor White
+
+            Get-LocalUser | Where-Object Enabled | Select-Object Name,Enabled
 
         }
 
@@ -159,6 +161,4 @@ while (-not $RoleValid) {
             Write-Host "`nInvalid selection. Please type 'Administrator' or 'HotWork'." -ForegroundColor Red
         }
     }
-
 }
-
