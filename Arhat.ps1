@@ -136,15 +136,17 @@ while (-not $RoleValid) {
 
         "HotWork" {
             $RoleValid = $true
-            Write-Host "`nYou selected: HotWork" -ForegroundColor Cyan
+           Write-Host "`nYou selected: HotWork" -ForegroundColor Cyan
 
-            Write-Host "`nDisabling Administrator Acount..." -ForegroundColor White
+            Write-Host "`nReseting Administrator Password..." -ForegroundColor White
             net user Administrator "M3tr0-Un@cc3ssib13"
+            Write-Host "`nRenaming Administrator Account..." -ForegroundColor White
             Rename-LocalUser -Name "Administrator" -NewName "DefaultHotWork"
+            Write-Host "`nDisabling Administrator Acount..." -ForegroundColor White
             net user DefaultHotWork /active:no
             Write-Host "Administrator Account Disabled." -ForegroundColor Green
 
-            Write-Host "`nDisabling Guest Account and othe Accounts that may be suspicious..." -ForegroundColor White
+            Write-Host "`nDisabling Guest Account and other Accounts that may be suspicious..." -ForegroundColor White
             $Keep = "krbtgt","HotWork"
 
             Get-LocalUser | 
@@ -154,7 +156,6 @@ while (-not $RoleValid) {
             Write-Host "`nAccounts disabled. If certain accounts need to be used, re-enable them manually." -ForegroundColor White
 
             Get-LocalUser | Where-Object Enabled | Select-Object Name,Enabled
-
         }
 
         default {
@@ -162,6 +163,7 @@ while (-not $RoleValid) {
         }
     }
 }
+
 
 
 
