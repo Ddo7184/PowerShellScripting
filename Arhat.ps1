@@ -145,7 +145,7 @@ while (-not $RoleValid) {
             Write-Host "Administrator Account Disabled." -ForegroundColor Green
 
             Write-Host "`nDisabling Guest Account and othe Accounts that may be suspicious..." -ForegroundColor White
-            $Keep = "Administrator","HotWork"
+            $Keep = "krbtgt","HotWork"
 
             Get-LocalUser | 
             Where-Object { $Keep -notcontains $_.Name } | 
@@ -162,5 +162,6 @@ while (-not $RoleValid) {
         }
     }
 }
+
 
 
