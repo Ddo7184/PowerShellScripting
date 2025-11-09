@@ -11,12 +11,12 @@
 # Please test and verify the script can function correctly with PowerShell ISE(Admin) in a non-production environment.
 # If the script breaks, please inform me of what happened, preferrably with screenshots of errors.
 #
-#HotWork Passwords (Feel free to change these when necessary or at your leisure)
+# HotWork Passwords (Feel free to change these when necessary or at your leisure)
 #
-#AD/DNS: M3tr0-AD-DN$-000
-#Web: M3tr0-W3b-SRV-001
-#FTP: M3tr0-4TP-SRV-002
-#Workstation: M3tr0-W@llFire-GUI
+# AD/DNS: M3tr0-AD-DN$-000
+# Web: M3tr0-W3b-SRV-001
+# FTP: M3tr0-4TP-SRV-002
+# Workstation: M3tr0-W@llFire-GUI
 #
 #
 #
@@ -159,4 +159,5 @@ while (-not $RoleValid) {
             Write-Host "`nInvalid selection. Please type 'Administrator' or 'HotWork'." -ForegroundColor Red
         }
     }
+
 }
