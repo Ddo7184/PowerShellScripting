@@ -144,14 +144,14 @@ while (-not $RoleValid) {
             net user DefaultHotWork /active:no
             Write-Host "Administrator Account Disabled." -ForegroundColor Green
 
-            WriteHost "`nDisabling Guest Account and othe Accounts that may be suspicious..." -ForegroundColor White
+            Write-Host "`nDisabling Guest Account and othe Accounts that may be suspicious..." -ForegroundColor White
             $Keep = "Administrator","HotWork"
 
             Get-LocalUser | 
             Where-Object { $Keep -notcontains $_.Name } | 
             Disable-LocalUser
 
-            WriteHost "`nAccounts disabled. If certain accounts need to be used, re-enable them manually." -ForegroundColor White
+            Write-Host "`nAccounts disabled. If certain accounts need to be used, re-enable them manually." -ForegroundColor White
 
             Get-LocalUser | Where-Object Enabled | Select-Object Name,Enabled
 
@@ -162,4 +162,5 @@ while (-not $RoleValid) {
         }
     }
 }
+
 
